@@ -1,0 +1,32 @@
+---
+layout: default
+---
+		<div class="container">
+			<div class="row top-line animate-box">
+				<div class="col-md-8 col-md-offset-2 intro col-md-push-2 text-left ">
+					<h2>All posts by date.</h2>
+    			</div>
+			</div>
+			
+			<div class="row">
+				{% for post in site.posts %}
+				<div class="col-md-8 col-md-offset-2">
+					<hr>
+					<span style="float:right;font-size: 20px" class="hidden-xs">{{post.date | date_to_string}}</span>
+					<a href="{{ post.url }}">
+						<h2 style="padding: 0">{{post.title}}</h2>
+						<h3 style="color:#828282">{{ post.subtitle}}</h3>
+					</a>
+					{% assign tags = post.tags | sort %}
+					{% for tag in tags %}
+						<a href="/blog/archive#{{tag}}" class="btn-sm btn-primary text-center" style="padding:0.1em 0.3em">{{tag}}</a>
+					{% endfor %}
+					
+				</div>
+				{% endfor %}
+			</div>
+			<div class="row" style="padding-top: 4rem">
+				<h3 class="col-md-8 col-md-offset-2 text-center" style="color:#000;text-decoration: underline;"><a href="/blog/archive/">Blog Archive</a></h3>
+    		</div>
+
+		</div>

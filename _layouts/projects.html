@@ -1,0 +1,60 @@
+---
+layout: default
+---
+		<div class="container">
+			<div class="row top-line animate-box">
+				<div class="col-md-8 col-md-offset-2 intro text-center ">
+					<h2>A list of my Projects.</h2>
+					<h3 class="fh5co-highlight">
+					Sorted by:
+					</h3>
+				</div>
+				<div class="col-md-6 col-md-offset-3 text-center">
+					<a data-toggle="tab" class="btn btn-primary proj-tabs" id="all_1" href="#all">Date</a>
+    				<a data-toggle="tab" class="btn btn-primary proj-tabs" id="categories_1" href="#categories">Categories</a>
+    			</div>
+			</div>
+			<div class="row">
+				<div class="tab-content">
+					<div id="all" class="tab-pane fade in active">
+						{% for project in site.projects %}
+							<div class="col-md-4 text-center animate-box">
+								<a class="work" href="{{ project.url }}">
+									<div class="work-grid" style="background-image:url({{ project.img | relative_url }} );">
+										<div class="inner">
+											<div class="desc">
+												<h3 style="text-transform: capitalize;">{{ project.title }}</h3>
+												<span class="cat">
+												{{ project.date | date_to_string}}
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						{% endfor %}
+					</div>
+					<div id="categories" class="tab-pane fade">
+						{% assign topics = site.projects | group_by: "topic" | sort: "name" %}
+							
+						{% for topic in topics %}
+							{% assign  no = topic.items | size %}
+							<div class="col-md-4 text-center animate-box">
+								<a class="work" href="/{{ topic.name }}">
+									<div class="work-grid" style="background-image:url({{ site.data.topics[topic.name].img }});background-size: contain;">
+										<div class="inner">
+											<div class="desc">
+												<h3>{{ topic.name }}</h3>
+												<span class="cat">{{ no }} Project{% if no >1 %}s {% endif %}</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						{% endfor %}
+					</div>
+
+				</div>
+
+			</div>
+		</div>

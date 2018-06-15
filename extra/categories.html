@@ -1,0 +1,31 @@
+---
+layout: default
+---
+		<div class="container">
+			<div class="row top-line animate-box" style="padding-bottom: 4em">
+				<div class="col-md-8 col-md-offset-2 col-md-push-2 text-left intro">
+					<h2>
+						Projects By Categories
+					</h2>
+				</div>
+			</div>
+			<div class="row">
+			{% for category in site.categories %}
+				{% assign cat = category | first %}
+				{% assign  no = category | last | size %}
+				<div class="col-md-4 text-center animate-box">
+					<a class="work" href="/{{ cat }}">
+						<div class="work-grid" style="background-image:url({{ site.data.categories[cat].img }});background-size: contain;">
+							<div class="inner">
+								<div class="desc">
+								<h3>{{ cat }}</h3>
+								<span class="cat">{{ no }} Project{% if no >1 %}s {% endif %}</span>
+							</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+

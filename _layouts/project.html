@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+	{% include head.html %}
+
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+
+	{% include nav.html %}
+	
+	<div id="fh5co-author">
+		<div class="container">
+			
+			<div class="row top-line animate-box">
+				
+				<div class="col-md-8 col-md-offset-2  text-left fh5co-heading">
+					
+					<h1 style="text-transform: uppercase;font-weight: 500">{{ page.title }}</h1>
+					<h2>{{ page.subtitle }}</h2>
+					<p class="col-md-10">
+							<a href="/{{page.topic}}" class="btn-sm btn-primary text-center" style="font-weight: bold">: {{page.topic}}</a>
+					</p>
+					<img src="{{ page.img| relative_url }}" class="img-responsive col-sm-6 col-sm-offset-3">
+					
+					<div class="role col-md-4 col-md-offset-1">
+						
+						<h3>Concepts Used</h3>
+						<ul>
+							{% for concept in page.concepts %}
+								<li>{{ concept }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+
+					<div class="role col-md-4 col-md-offset-1">
+						<h3>Features</h3>
+						<ul>
+							{% for feature in page.features %}
+								<li>{{ feature }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+					{% if page.link %}
+						<p class="col-md-10 text-center">
+							<a href="{{ page.link }}" class="btn btn-primary text-center" target="_blank">View On Github</a>
+						</p>
+					{% endif %}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					
+					<br>
+					{{ content }}
+
+					<div class="row row-pt-md portfolio-navigation">
+						<div class="col-sm-4 text-center">
+						{% if page.previous.url %}
+							<a href="{{ page.previous.url }}" class="btn btn-primary btn-outline"><i class="icon-chevron-left"></i> Prev </a>
+						{% endif %}
+						</div>
+						<div class="col-sm-4 text-center">
+							<a href="/projects/" class="btn btn-primary btn-outline"><i class="icon-grid2"></i> View All</a>
+						</div>
+						<div class="col-sm-4 text-center">
+						{% if page.next.url %}
+							<a href="{{ page.next.url }}" class="btn btn-primary btn-outline">Next <i class="icon-chevron-right"></i></a>
+						{% endif %}
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- {% include section.html %} -->
+	
+	{% include footer.html %}
+
+	</div>
+
+	{% include end_body.html %}
+
+	</body>
+</html>
+

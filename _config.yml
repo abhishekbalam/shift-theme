@@ -1,0 +1,29 @@
+name: Projects
+title: Personal
+url: 
+#baseurl: /projects
+
+
+include: [_topics]
+exclude: [extra, _projects/wait]
+permalink: none
+
+collections:
+ projects:
+  output: true
+  permalink: /projects/:path
+
+markdown: kramdown
+
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
+
+social:
+  linkedin: https://www.linkedin.com/in/
+  github: https://www.github.com/
+  facebook: https://www.facebook.com/
+  instagram: https://instagram.com/
+  

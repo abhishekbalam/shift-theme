@@ -1,0 +1,19 @@
+C:
+  subtitle: All Projects Made with C.
+  img: /assets/images/categories/C.png
+
+java:
+  subtitles: All Projects Made in Java.
+  img: /assets/images/categories/java.png
+
+android:
+  subtitle: All Projects Made with Android.
+  img: https://cnet4.cbsistatic.com/img/QJcTT2ab-sYWwOGrxJc0MXSt3UI=/2011/10/27/a66dfbb7-fdc7-11e2-8c7c-d4ae52e62bcc/android-wallpaper5_2560x1600_1.jpg
+  
+linux:
+  subtitles: All Projects Made with Linux.
+  img: http://img11.deviantart.net/0960/i/2011/226/b/4/linux_kernel_icon_by_petux7-d46j321.png
+
+ruby:
+  subtitles: All Projects Made with Ruby.
+  img: https://lh6.googleusercontent.com/-NxZGUZXZg6A/AAAAAAAAAAI/AAAAAAAAAAc/QS4oVJL2NgI/photo.jpg

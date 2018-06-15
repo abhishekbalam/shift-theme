@@ -1,0 +1,35 @@
+---
+layout: default
+---
+		<div class="container">
+			<div class="row top-line animate-box">
+				<div class="col-md-4">
+					<img src="{{ site.data.topics[page.topic].img }}" class="img-responsive">
+				</div>
+				<div class="col-md-8 text-left fh5co-heading">
+					<h1 style="text-transform: capitalize;">{{ page.topic }}</h1>
+					<h3>{{ site.data.topics[page.topic].subtitle }}</h3>
+					<p>{{ content }}</p>
+				</div>
+			</div>
+			
+			<div class="row">
+			{% assign projects = site.projects | where: "topic", page.topic %}
+
+			{% for project in projects %}
+				<div class="col-md-4 text-center animate-box">
+					<a class="work" href="{{ project.url }}">
+						<div class="work-grid" style="background-image:url({{ project.img | relative_url }} );">
+							<div class="inner">
+							<div class="desc">
+								<h3>{{ project.title }}</h3>
+								<span class="cat">{{ project.category }}</span>
+							</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+			</div>
+		
+		</div>
